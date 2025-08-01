@@ -232,9 +232,7 @@ downloadBtn.addEventListener('click', async () => {
   overlayImg.crossOrigin = 'anonymous';
   overlayImg.src = frameOverlay.src;
   overlayImg.onload = () => {
-    exportCtx.globalAlpha = 0.7;
     exportCtx.drawImage(overlayImg, 0, 0, CANVAS_SIZE, CANVAS_SIZE);
-    exportCtx.globalAlpha = 1;
     exportCanvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
